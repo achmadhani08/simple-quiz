@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="Assets/img/icon.png" rel="icon" />
+		<title>Friendly Quiz Game</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<!-- ⬇ UNCOMMENT TO DISABLED LOADER ⬇ -->
+	<!-- <body id="body" class="white-bg"> -->
+
+	<!-- START COMMENT: DISABLED LOADER -->
+	<body id="body" class="white-bg" onload="myLoader()">
+		<div id="load-component">
+			<div id="loader">
+				<div class="fade-in">
+					<p><b>Selamat mengerjakan kuis di Web Quiz!</b><br /><br />
+					Halo, kami developer. Di website ini terdiri dari 3 subjects yang bisa
+					Anda pilih, yaitu Algoritma, English, dan Matematika. Setiap subjects
+					terdiri dari 20 soal. Anda memiliki waktu 20 detik untuk menjawab setiap
+					soal. <p>Kalau Anda tidak bisa menjawab soal, AFK aja :)</p>
+					<br />
+					Loading....</p>
+				</div>
+			</div>
+		</div>
+		<!-- END COMMENT -->
+		<div id="container" class="gray-card">
+			<h2 id="title" class="title-quiz block">Choose Your Quiz</h2>
+			<div id="buttons" class="subjects-button-container block">
+				<button id="start" class="block start-button" onclick="startQuiz()">Algorithm</button>
+				<button id="english" class="block start-button">English</button>
+				<button id="math" class="block start-button">Math</button>
+			</div>
+			<div id="quiz" class="none">
+				<div id="question"></div>
+				<div id="qImg"></div>
+				<div id="choices">
+					<button class="choice" id="A" onclick="checkAnswer('A')"></button>
+					<button class="choice" id="B" onclick="checkAnswer('B')"></button>
+					<button class="choice" id="C" onclick="checkAnswer('C')"></button>
+					<button class="choice" id="D" onclick="checkAnswer('D')"></button>
+				</div>
+				<div id="timer">
+					<div id="counter"></div>
+				</div>
+				<div id="progress"></div>
+			</div>
+		</div>
+		<div id="scoreContainer" class="none"></div>
+		<footer>
+      Copyright © 2024 - Designed by Dnsy
+    </footer>
+		<script src="app.js"></script>
+	</body>
+</html>
