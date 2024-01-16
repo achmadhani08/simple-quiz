@@ -131,15 +131,14 @@ body {
 }
 
 #choices {
-	width: 580px;
+	width: 600px;
 	position: absolute;
-	right: 0;
-	top: 100px;
-	padding: 10px;
+	left: 0;
+	top: 180px;
+	padding-left: 28px;
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	gap: 35px;
-	margin: 10px 10px;
 	transition: all 0.4s ease 0s;
 	animation: drop 2s ease;
 }
@@ -165,7 +164,8 @@ body {
 	position: absolute;
 	height: 48px;
 	width: 54px;
-	bottom: 0px;
+	bottom: 250px;
+	right: 150px;
 	text-align: center;
 }
 #counter {
@@ -201,8 +201,8 @@ body {
 	width: 500px;
 	box-shadow: 0px 5px 15px 0px;
 	position: absolute;
-	top: -25px;
-	left: 25%;
+	top: 10%;
+	left: 32%;
 	transition: all 0.4s ease 0s;
 	animation: drop 2s ease;
 	justify-content: center;

@@ -16,202 +16,398 @@ const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 
 // create questions
-let questions = [
+// let questions = [
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "C",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "B",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "A",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "C",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "B",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "D",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "A",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "B",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "C",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "C",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "A",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "C",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "D",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "B",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "A",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "D",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "C",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "B",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "B",
+//   },
+//   {
+//     question: "Lorem ipsum dolor sit amet?",
+//     imgSrc: "Assets/img/dog.gif",
+//     choiceA: "Lorem",
+//     choiceB: "ipsum",
+//     choiceC: "dolor",
+//     choiceD: "sit",
+//     correct: "C",
+//   },
+// ];
+
+const math = [
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "C",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Hasil dari 1 + 1 x 0 adalah....",
+    choiceA: "0",
+    choiceB: "1",
+    choiceC: "2",
+    choiceD: "3",
     correct: "B",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "A",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Sebuah persegi memiliki panjang sisi yaitu 20cm. Luas dan keliling persegi tersebut yaitu....",
+    choiceA: "300cm2 dan 60cm2",
+    choiceB: "200cm2 dan 200cm2",
+    choiceC: "400cm2 dan 80 cm2",
+    choiceD: "Tidak ada jawaban benar",
     correct: "C",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Hasil dari (-7) 3 adalah....",
+    choiceA: "-343",
+    choiceB: "-21",
+    choiceC: "21",
+    choiceD: "343",
     correct: "B",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Akar-akar persamaan kuadrat : x2 + 7x + 6 = 0 adalah ....",
+    choiceA: "1 dan 6",
+    choiceB: "1 dan -6",
+    choiceC: "-1 dan 6",
+    choiceD: "-1 dan -6",
     correct: "D",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "A",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "B",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "C",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "C",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "A",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "C",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Nilai minimum dari fungsi y = x2 + 8x + 15 adalah....",
+    choiceA: "y = 2",
+    choiceB: "y = 1",
+    choiceC: "y = -2",
+    choiceD: "y = -1",
     correct: "D",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "B",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Pembuat nol fungsi kuadrat y = x2 – 2x – 8 adalah....",
+    choiceA: "-2 dan 4",
+    choiceB: "2 dan 4",
+    choiceC: "2 dan -4",
+    choiceD: "-2 dan -4",
     correct: "A",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Sumbu simetri dari grafik fungsi y = x2 – 6x + 8 adalah",
+    choiceA: "x = 4",
+    choiceB: "x = 3",
+    choiceC: "x = 2",
+    choiceD: "x = 1",
+    correct: "B",
+  },
+  {
+    question: "Sebuah segitiga mempunyai panjang alas 6 cm dan tinggi 8 cm. Luas segitiga tersebut adalah....cm²",
+    choiceA: "96",
+    choiceB: "24",
+    choiceC: "48",
+    choiceD: "12",
+    correct: "B",
+  },
+  {
+    question: "Luas lingkaran yang berjari-jari 14 cm adalah .... cm²",
+    choiceA: "154",
+    choiceB: "308",
+    choiceC: "616",
+    choiceD: "1024",
+    correct: "C",
+  },
+  {
+    question: "Sebuah kolam ikan berbentuk lingkaran yang luasnya 38,5 m2. Di sekeliling kolam akan dipasangi pagar. Panjang pagar tersebut adalah",
+    choiceA: "22m",
+    choiceB: "12m",
+    choiceC: "38,5m",
+    choiceD: "24m",
+    correct: "A",
+  },
+  {
+    question: "Faktor persekutuan terbesar (FPB) dari 72 dan 96 adalah .....",
+    choiceA: "3",
+    choiceB: "24",
+    choiceC: "16",
+    choiceD: "20",
+    correct: "B",
+  },
+  {
+    question: "Kelipatan persekutuan kecil (KPK) dari 18 dan 24 adalah",
+    choiceA: "24",
+    choiceB: "6",
+    choiceC: "72",
+    choiceD: "74",
+    correct: "C",
+  },
+  {
+    question: "Hasil dari 0,25 × 2,5 : 25% adalah....",
+    choiceA: "2,75",
+    choiceB: "2,25",
+    choiceC: "2,65",
+    choiceD: "2,5",
     correct: "D",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
-    correct: "C",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Pak Arif membeli motor dengan harga Rp15.000.000,00 dan dijual lagi dengan harga Rp16.500.000,00. Berapa perentase keuntungan yang diperoleh....",
+    choiceA: "1%",
+    choiceB: "10%",
+    choiceC: "15%",
+    choiceD: "1,5%",
     correct: "B",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Hasil dari 872 + 63 x (-9) - 927 : (-9) =",
+    choiceA: "480",
+    choiceB: "408",
+    choiceC: "840",
+    choiceD: "448",
     correct: "B",
   },
   {
-    question: "Lorem ipsum dolor sit amet?",
-    imgSrc: "Assets/img/dog.gif",
-    choiceA: "Lorem",
-    choiceB: "ipsum",
-    choiceC: "dolor",
-    choiceD: "sit",
+    question: "Hasil dari 50 : 5 (5 - 3) + 5 : (1/5) =",
+    choiceA: "54",
+    choiceB: "45",
+    choiceC: "35",
+    choiceD: "53",
+    correct: "B",
+  },
+  {
+    question: "Sebuah kubus memiliki panjang rusuk 10 cm dan dibelah-belah menjadi 8 kubus kecil yang besarnya sama. Maka, berapakah panjang rusuk ke 8 kubus kecil tersebut....",
+    choiceA: "360",
+    choiceB: "400",
+    choiceC: "480",
+    choiceD: "444",
     correct: "C",
+  },
+  {
+    question: "Sebuah taman berbentuk lingkaran dengan jari-jari 35 meter dan terdapat pintu masuk taman selebar 3 meter. Di sekeliling taman dipasang lampu berjumlah 63 buah. Jarak antar lampu taman adalah ....",
+    choiceA: "3,50 meter",
+    choiceB: "3,44 meter",
+    choiceC: "1,75 meter",
+    choiceD: "1,73 meter",
+    correct: "B",
+  },
+  {
+    question: "Jika 660 +225 : (-15) = n, maka n adalah....",
+    choiceA: "645",
+    choiceB: "675",
+    choiceC: "-59",
+    choiceD: "-675",
+    correct: "A",
+  },
+  {
+    question: "Anita membeli seutas tali sepanjang 8,25 m . Sebelumnya sudah memiliki 6 3/4 m. Tali tersebut digunakan 1 1/5 m. Sisa tali yang terpakai adalah....",
+    choiceA: "13,80 m",
+    choiceB: "14,80 m",
+    choiceC: "13,20 m",
+    choiceD: "14,20 m",
+    correct: "A",
   },
 ];
 
 // Extra variables
 
-const lastQuestion = questions.length - 1;
+let subjects;
+
+function selectSubject(selectedSubject) {
+  if (selectedSubject === "math") {
+    subjects = math
+  } else if (selectedSubject === "english") {
+    subjects = english
+  } else subjects = algorithm
+
+
+  startQuiz()
+}
+
+const lastQuestion = 20 - 1;
 let runningQuestion = 0;
 let count = 0;
-const questionTime = 20; // 20s
+const questionTime = 5; // second
 
 let TIMER;
 let score = 0;
 
+// start.addEventListener("click", startQuiz);
+
+// start quiz
+function startQuiz() {
+  var music = new Audio();
+  music.src = "Assets/music/Easy song.mp3";
+  music.play();
+  title.classList.replace("block", "none");
+  buttons.classList.replace("subjects-button-container", "none");
+  start.classList.replace("block", "none");
+  body.classList.replace("white-bg", "gray-bg")
+  container.classList.replace("gray-card", "white-card")
+  renderQuestion();
+  quiz.classList.replace("none", "block");
+  renderProgress();
+  renderCounter();
+  TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
+
+}
+
 // render a question
 function renderQuestion() {
-  let q = questions[runningQuestion];
+  let q = subjects[runningQuestion];
 
   question.innerHTML = "<p>" + q.question + "</p>";
   // qImg.innerHTML = "<img src=" + q.imgSrc + ">";
@@ -219,26 +415,6 @@ function renderQuestion() {
   choiceB.innerHTML = q.choiceB;
   choiceC.innerHTML = q.choiceC;
   choiceD.innerHTML = q.choiceD;
-}
-
-// start.addEventListener("click", startQuiz);
-
-// start quiz
-function startQuiz() {
-  // var music = new Audio();
-  // music.src = "Assets/music/Easy song.mp3";
-  // music.play();
-  title.classList.replace("block", "none");
-  buttons.classList.replace("subjects-button-container", "none");
-  start.classList.replace("block", "none");
-  body.classList.replace("white-bg", "gray-bg")
-  container.classList.replace("gray-card", "white-card")
-
-  renderQuestion();
-  quiz.classList.replace("none", "block");
-  renderProgress();
-  renderCounter();
-  TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
 }
 
 // render progress
@@ -273,7 +449,7 @@ function renderCounter() {
 // checkAnwer
 
 function checkAnswer(answer) {
-  if (answer == questions[runningQuestion].correct) {
+  if (answer == subjects[runningQuestion].correct) {
     // answer is correct
     score++;
     // change progress color to green
@@ -297,17 +473,17 @@ function checkAnswer(answer) {
 // answer is correct
 function answerIsCorrect() {
   document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
-  // var music = new Audio();
-  // music.src = "Assets/music/yeah.mp3";
-  // music.play();
+  var music = new Audio();
+  music.src = "Assets/music/yeah.mp3";
+  music.play();
 }
 
 // answer is Wrong
 function answerIsWrong() {
   document.getElementById(runningQuestion).style.backgroundColor = "#f00";
-  // var music = new Audio();
-  // music.src = "Assets/music/Huh.mp3";
-  // music.play();
+  var music = new Audio();
+  music.src = "Assets/music/Huh.mp3";
+  music.play();
 }
 
 // score render
@@ -320,12 +496,12 @@ function scoreRender() {
   quiz.classList.replace("block", "none");
 
   scoreDiv.classList.remove("none");
-  // var music = new Audio();
-  // music.src = "Assets/music/GameOver.mp3";
-  // music.play();
+  var music = new Audio();
+  music.src = "Assets/music/GameOver.mp3";
+  music.play();
 
   // calculate the amount of question percent answered by the user
-  const scorePerCent = Math.round((100 * score) / questions.length);
+  const scorePerCent = Math.round((100 * score) / subjects.length);
 
   // choose the image based on the scorePerCent
   let img =
@@ -345,36 +521,7 @@ function scoreRender() {
 }
 
 function reloadQuiz() {
-  body.removeAttribute("onload")
-  body.innerHTML = `<body id="body" class="white-bg">
-  	<div id="container" class="gray-card">
-  		<h2 id="title" class="title-quiz block">Choose Your Quiz</h2>
-  		<div id="buttons" class="subjects-button-container block">
-  			<button id="start" class="block start-button" onclick="startQuiz()">Algorithm</button>
-  			<button id="english" class="block start-button">English</button>
-  			<button id="math" class="block start-button">Math</button>
-  		</div>
-  		<div id="quiz" class="none">
-  			<div id="question"></div>
-  			<div id="qImg"></div>
-  			<div id="choices">
-  				<button class="choice" id="A" onclick="checkAnswer('A')"></button>
-  				<button class="choice" id="B" onclick="checkAnswer('B')"></button>
-  				<button class="choice" id="C" onclick="checkAnswer('C')"></button>
-  				<button class="choice" id="D" onclick="checkAnswer('D')"></button>
-  			</div>
-  			<div id="timer">
-  				<div id="counter"></div>
-  			</div>
-  			<div id="progress"></div>
-  		</div>
-  	</div>
-  	<div id="scoreContainer" class="none"></div>
-  	<footer>
-      Copyright © 2024 - Designed by Dnsy
-    </footer>
-  	<script src="app.js"></script>
-  </body>`
+  window.location.reload()
 }
 
 //////////////////////////////////////////////////////

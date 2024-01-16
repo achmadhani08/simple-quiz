@@ -8,11 +8,11 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<!-- ⬇ UNCOMMENT TO DISABLED LOADER ⬇ -->
-	<!-- <body id="body" class="white-bg"> -->
+	<body id="body" class="white-bg">
 
 	<!-- START COMMENT: DISABLED LOADER -->
-	<body id="body" class="white-bg" onload="myLoader()">
-		<div id="load-component">
+	<!-- <body id="body" class="white-bg" onload="myLoader()"> -->
+		<!-- <div id="load-component">
 			<div id="loader">
 				<div class="fade-in">
 					<p><b>Selamat mengerjakan kuis di Web Quiz!</b><br /><br />
@@ -24,14 +24,14 @@
 					Loading....</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- END COMMENT -->
 		<div id="container" class="gray-card">
 			<h2 id="title" class="title-quiz block">Choose Your Quiz</h2>
 			<div id="buttons" class="subjects-button-container block">
-				<button id="start" class="block start-button" onclick="startQuiz()">Algorithm</button>
-				<button id="english" class="block start-button">English</button>
-				<button id="math" class="block start-button">Math</button>
+				<button id="start" class="block start-button" onclick="selectSubject('math')">Math</button>
+				<button id="english" class="block start-button" onclick="selectSubject('english')">English</button>
+				<button id="algorithm" class="block start-button" onclick="selectSubject('algorithm')">Algorithm</button>
 			</div>
 			<div id="quiz" class="none">
 				<div id="question"></div>
