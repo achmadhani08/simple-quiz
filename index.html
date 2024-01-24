@@ -4,10 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link href="Assets/img/kurkur.ico" rel="icon" />
-		<title>Konoha Quiz</title>
+		<title>Kurkur Quiz</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body id="body" class="white-bg">
+		<audio id="intro-music" autoplay>
+			<source src="Assets/music/intro-game.mp3" type="audio/mp3" />
+		</audio>
 		<button id="info-btn" onclick="showHideInfo()">
 			<svg
 				id="icon"
@@ -74,8 +77,9 @@
 						<b>Selamat mengerjakan kuis di Web Quiz!</b><br /><br />
 						Halo, kami developer. Di website ini terdiri dari 3 subjects yang
 						bisa Anda pilih, yaitu Algoritma, English, dan Matematika. Setiap
-						subjects terdiri dari 20 soal. Anda memiliki waktu 20 detik untuk
-						menjawab setiap soal.
+						subjects terdiri dari 20 soal. Anda memiliki waktu 1.5 menit untuk
+						menjawab tiap soal Matematika dan Algoritma, sedangkan 1 menit untuk
+						tiap soal English
 					</p>
 
 					<p>Kalau Anda tidak bisa menjawab soal, AFK aja :)</p>

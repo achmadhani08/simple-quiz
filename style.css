@@ -9,7 +9,7 @@
 #info-btn {
 	border: 2px solid black;
 	z-index: 100;
-	border-radius: 50%;
+	border-radius: 100%;
 	background-color: transparent;
 	position: absolute;
 	top: 1rem;
@@ -226,8 +226,8 @@ body {
 	flex-direction: column;
 }
 #scoreContainer img {
-	width: 80px;
-	height: 80px;
+	width: 150px;
+	height: 150px;
 }
 #scoreContainer p {
 	margin: 0;

@@ -283,11 +283,11 @@ const english = [
     correct: "C",
   },
   {
-    question: "Ferdy : Why are you still here? Didn’t you tell me that you would go to Jakarta today? <br> Eric : I would have been In Jakarta if the bus had not got an accident. <br> The italicized utterance means....",
-    choiceA: "Eric is in Jakarta",
-    choiceB: "Eric went to Jakarta",
-    choiceC: "the bus was safe",
-    choiceD: "the bus got an accident",
+    question: "Eric has ... to the office for 2 hours",
+    choiceA: "went",
+    choiceB: "go",
+    choiceC: "going",
+    choiceD: "gone",
     correct: "D",
   },
   {
@@ -512,6 +512,14 @@ const algorithm = [
 // Extra variables
 let subjects;
 let questionTime = Number; // second
+let count = 0;
+let TIMER;
+
+const introMusic = document.getElementById("intro-music")
+
+window.onload = function () {
+  introMusic.play()
+}
 
 function selectSubject(selectedSubject) {
   if (selectedSubject === "math") {
@@ -525,24 +533,23 @@ function selectSubject(selectedSubject) {
     questionTime = 90
   }
 
+  introMusic.pause()
+
   startQuiz()
 }
 
 const lastQuestion = 20 - 1;
 let runningQuestion = 0;
-let count = 0;
-
-let TIMER;
 let score = 0;
 
+let gameMusic = new Audio();
 // start quiz
 function startQuiz() {
   const infoBtn = document.getElementById("info-btn")
   infoBtn.style.display = "none"
 
-  var music = new Audio();
-  music.src = "Assets/music/Easy song.mp3";
-  music.play();
+  gameMusic.src = "Assets/music/warkop-song.mp3";
+  gameMusic.play();
   title.classList.replace("block", "none");
   buttons.classList.replace("subjects-button-container", "none");
   start.classList.replace("block", "none");
@@ -561,7 +568,6 @@ function renderQuestion() {
   let q = subjects[runningQuestion];
 
   question.innerHTML = "<p>" + q.question + "</p>";
-  // qImg.innerHTML = "<img src=" + q.imgSrc + ">";
   choiceA.innerHTML = q.choiceA;
   choiceB.innerHTML = q.choiceB;
   choiceC.innerHTML = q.choiceC;
@@ -577,12 +583,10 @@ function renderProgress() {
 
 // counter render
 function renderCounter() {
-  if (count <= questionTime) {
-    counter.innerHTML = count;
-
-    count++;
+  if (questionTime > count) {
+    counter.innerHTML = questionTime;
+    questionTime--;
   } else {
-    count = 0;
     // change progress color to red
     answerIsWrong();
     if (runningQuestion < lastQuestion) {
@@ -603,10 +607,23 @@ function checkAnswer(answer) {
     score++;
     // change progress color to green
     answerIsCorrect();
+
+    questionTime =
+      subjects === math
+        ? 90
+        : subjects === english
+          ? 60
+          : 90
   } else {
     // answer is wrong
     // change progress color to red
     answerIsWrong();
+    questionTime =
+      subjects === math
+        ? 90
+        : subjects === english
+          ? 60
+          : 90
   }
   count = 0;
   if (runningQuestion < lastQuestion) {
@@ -623,7 +640,7 @@ function checkAnswer(answer) {
 function answerIsCorrect() {
   document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
   var music = new Audio();
-  music.src = "Assets/music/yeah.mp3";
+  music.src = "Assets/music/kerja-bagus.mp3";
   music.play();
 }
 
@@ -631,12 +648,14 @@ function answerIsCorrect() {
 function answerIsWrong() {
   document.getElementById(runningQuestion).style.backgroundColor = "#f00";
   var music = new Audio();
-  music.src = "Assets/music/Huh.mp3";
+  music.src = "Assets/music/wrong.mp3";
   music.play();
 }
 
 // score render
 function scoreRender() {
+  gameMusic.pause()
+
   title.classList.replace("none", "block");
   buttons.classList.replace("none", "subjects-button-container");
   start.classList.replace("none", "block");
@@ -645,53 +664,47 @@ function scoreRender() {
   quiz.classList.replace("block", "none");
 
   scoreDiv.classList.remove("none");
-  var music = new Audio();
-  music.src = "Assets/music/GameOver.mp3";
-  music.play();
+  // var music = new Audio();
+  // music.src = "Assets/music/GameOver.mp3";
+  // music.play();
 
   // calculate the amount of question percent answered by the user
-  const scorePerCent = Math.round((100 * score) / subjects.length);
+  let scorePerCent = Math.round((100 * score) / subjects.length);
 
   // choose the image based on the scorePerCent
   let img = ""
   if (scorePerCent >= 80) {
-    img = "Assets/img/5.png"
-    setTimeout(() => {
-      var music = new Audio();
-      music.src = "Assets/music/Huh.mp3";
-      music.play();
-    }, 2000);
+    img = "Assets/img/win.jpeg"
+
+    var music = new Audio();
+    music.src = "Assets/music/win.mp3";
+    music.play();
   } else if (scorePerCent >= 60) {
-    img = "Assets/img/4.png"
-    setTimeout(() => {
-      var music = new Audio();
-      music.src = "Assets/music/Huh.mp3";
-      music.play();
-    }, 2000);
+    img = "Assets/img/second.jpeg"
+
+    var music = new Audio();
+    music.src = "Assets/music/second-place.mp3";
+    music.play();
 
   } else if (scorePerCent >= 40) {
-    img = "Assets/img/3.png"
-    setTimeout(() => {
-      var music = new Audio();
-      music.src = "Assets/music/Huh.mp3";
-      music.play();
-    }, 2000);
+    img = "Assets/img/third.jpeg"
+    var music = new Audio();
+    music.src = "Assets/music/third-place.mp3";
+    music.play();
 
   } else if (scorePerCent >= 20) {
-    img = "Assets/img/2.png"
-    setTimeout(() => {
-      var music = new Audio();
-      music.src = "Assets/music/Huh.mp3";
-      music.play();
-    }, 2000);
+    img = "Assets/img/fourth.jpeg"
+
+    var music = new Audio();
+    music.src = "Assets/music/fourth-place.mp3";
+    music.play();
 
   } else {
-    img = "Assets/img/1.png";
-    setTimeout(() => {
-      var music = new Audio();
-      music.src = "Assets/music/Huh.mp3";
-      music.play();
-    }, 2000);
+    img = "Assets/img/lose.jpeg";
+
+    var music = new Audio();
+    music.src = "Assets/music/lose.mp3";
+    music.play();
   }
 
   scoreDiv.innerHTML = "<img src=" + img + ">";
