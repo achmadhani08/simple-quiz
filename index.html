@@ -9,29 +9,49 @@
 	</head>
 	<!-- ⬇ UNCOMMENT TO DISABLED LOADER ⬇ -->
 	<body id="body" class="white-bg">
-
-	<!-- START COMMENT: DISABLED LOADER -->
-	<!-- <body id="body" class="white-bg" onload="myLoader()"> -->
-		<!-- <div id="load-component">
-			<div id="loader">
-				<div class="fade-in">
-					<p><b>Selamat mengerjakan kuis di Web Quiz!</b><br /><br />
-					Halo, kami developer. Di website ini terdiri dari 3 subjects yang bisa
-					Anda pilih, yaitu Algoritma, English, dan Matematika. Setiap subjects
-					terdiri dari 20 soal. Anda memiliki waktu 20 detik untuk menjawab setiap
-					soal. <p>Kalau Anda tidak bisa menjawab soal, AFK aja :)</p>
-					<br />
-					Loading....</p>
-				</div>
-			</div>
-		</div> -->
+		<!-- START COMMENT: DISABLED LOADER -->
+		<!-- <body id="body" class="white-bg" onload="myLoader()">
+		-->
 		<!-- END COMMENT -->
+		<button id="info-btn" onclick="showHideInfo()">
+			<svg
+				id="icon"
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				fill="currentColor"
+				class="bi bi-info-lg"
+				viewBox="0 0 16 16"
+			>
+				<path
+					d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0"
+				/>
+			</svg>
+		</button>
 		<div id="container" class="gray-card">
 			<h2 id="title" class="title-quiz block">Choose Your Quiz</h2>
 			<div id="buttons" class="subjects-button-container block">
-				<button id="start" class="block start-button" onclick="selectSubject('math')">Math</button>
-				<button id="english" class="block start-button" onclick="selectSubject('english')">English</button>
-				<button id="algorithm" class="block start-button" onclick="selectSubject('algorithm')">Algorithm</button>
+				<button
+					id="start"
+					class="block start-button"
+					onclick="selectSubject('math')"
+				>
+					Math
+				</button>
+				<button
+					id="english"
+					class="block start-button"
+					onclick="selectSubject('english')"
+				>
+					English
+				</button>
+				<button
+					id="algorithm"
+					class="block start-button"
+					onclick="selectSubject('algorithm')"
+				>
+					Algorithm
+				</button>
 			</div>
 			<div id="quiz" class="none">
 				<div id="question"></div>
@@ -49,9 +69,24 @@
 			</div>
 		</div>
 		<div id="scoreContainer" class="none"></div>
-		<footer>
-      Copyright © 2024 - Designed by Dnsy
-    </footer>
+		<footer>Copyright © 2024 - Designed by Dnsy</footer>
 		<script src="app.js"></script>
+
+		<div id="load-component">
+			<div id="loader" style="display: none">
+				<div class="fade-in">
+					<p>
+						<b>Selamat mengerjakan kuis di Web Quiz!</b><br /><br />
+						Halo, kami developer. Di website ini terdiri dari 3 subjects yang
+						bisa Anda pilih, yaitu Algoritma, English, dan Matematika. Setiap
+						subjects terdiri dari 20 soal. Anda memiliki waktu 20 detik untuk
+						menjawab setiap soal.
+					</p>
+
+					<p>Kalau Anda tidak bisa menjawab soal, AFK aja :)</p>
+					<br />
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

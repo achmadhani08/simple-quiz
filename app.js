@@ -15,190 +15,6 @@ const counter = document.getElementById("counter");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 
-// create questions
-// let questions = [
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "C",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "B",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "A",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "C",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "B",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "D",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "A",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "B",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "C",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "C",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "A",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "C",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "D",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "B",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "A",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "D",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "C",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "B",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "B",
-//   },
-//   {
-//     question: "Lorem ipsum dolor sit amet?",
-//     imgSrc: "Assets/img/dog.gif",
-//     choiceA: "Lorem",
-//     choiceB: "ipsum",
-//     choiceC: "dolor",
-//     choiceD: "sit",
-//     correct: "C",
-//   },
-// ];
-
 const math = [
   {
     question: "Hasil dari 1 + 1 x 0 adalah....",
@@ -363,16 +179,20 @@ const math = [
 ];
 
 // Extra variables
-
 let subjects;
+let questionTime = Number; // second
 
 function selectSubject(selectedSubject) {
   if (selectedSubject === "math") {
     subjects = math
+    questionTime = 90
   } else if (selectedSubject === "english") {
     subjects = english
-  } else subjects = algorithm
-
+    questionTime = 60
+  } else {
+    subjects = algorithm
+    questionTime = 90
+  }
 
   startQuiz()
 }
@@ -380,7 +200,6 @@ function selectSubject(selectedSubject) {
 const lastQuestion = 20 - 1;
 let runningQuestion = 0;
 let count = 0;
-const questionTime = 5; // second
 
 let TIMER;
 let score = 0;
@@ -389,6 +208,9 @@ let score = 0;
 
 // start quiz
 function startQuiz() {
+  const infoBtn = document.getElementById("info-btn")
+  infoBtn.style.display = "none"
+
   var music = new Audio();
   music.src = "Assets/music/Easy song.mp3";
   music.play();
@@ -524,13 +346,61 @@ function reloadQuiz() {
   window.location.reload()
 }
 
-//////////////////////////////////////////////////////
-var myVar;
+// //////////////////////////////////////////////////////
+// var myVar;
 
-function myLoader() {
-  myVar = setTimeout(showPage, 5000);
+// function myLoader() {
+//   myVar = setTimeout(showPage, 5000);
+// }
+
+function showHideInfo() {
+  const loader = document.getElementById("loader")
+  const infoBtn = document.getElementById("info-btn")
+  const icon = document.getElementById("icon")
+
+  console.log("Click");
+  if (loader.style.display === 'none') {
+    loader.style.display = 'block';
+    icon.innerHTML = `<svg
+				id="icon"
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				fill="currentColor"
+				class="bi bi-x-octagon"
+				viewBox="0 0 16 16"
+			>
+				<path
+					d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"
+				/>
+				<path
+					d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+				/>
+			</svg>`;
+    infoBtn.style.color = "yellow";
+  } else {
+    infoBtn.style.color = "black"
+    icon.innerHTML = `<svg
+				id="icon"
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				fill="currentColor"
+				class="bi bi-info-lg"
+				viewBox="0 0 16 16"
+			>
+				<path
+					d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0"
+				/>
+			</svg>`;
+
+    infoBtn.addEventListener("mouseover", function () {
+      infoBtn.style.color = "white";
+    });
+    infoBtn.addEventListener("mouseleave", function () {
+      infoBtn.style.color = "black";
+    });
+    loader.style.display = 'none';
+  }
 }
 
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-}

@@ -5,6 +5,22 @@
 	box-sizing: border-box;
 	font-family: "Concert One", cursive;
 }
+
+#info-btn {
+	border: 2px solid black;
+	z-index: 100;
+	border-radius: 50%;
+	background-color: transparent;
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+}
+
+#info-btn:hover {
+	background-color: #000;
+	color: #fff;
+}
+
 #loader {
 	position: absolute;
 	top: 0;
@@ -12,7 +28,7 @@
 	width: 100%;
 	height: 100vh;
 	background: black;
-	z-index: 200;
+	z-index: 50;
 	color: #fff;
 	text-align: center;
 	font-size: 48px;
