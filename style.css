@@ -147,7 +147,7 @@ body {
 }
 
 #choices {
-	width: 600px;
+	width: 700px;
 	position: absolute;
 	left: 0;
 	top: 180px;
@@ -180,7 +180,7 @@ body {
 	position: absolute;
 	height: 48px;
 	width: 54px;
-	bottom: 250px;
+	bottom: 200px;
 	right: 150px;
 	text-align: center;
 }
