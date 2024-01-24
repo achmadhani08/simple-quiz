@@ -204,7 +204,7 @@ const english = [
     correct: "D",
   },
   {
-    question: "Numerous performances of Mozart's operas ______ in Austria long before the beginning of the 19th century.",
+    question: "Numerous performances of Mozart's operas ... in Austria long before the beginning of the 19th century.",
     choiceA: "perform",
     choiceB: "had been performed",
     choiceC: "had performed",
@@ -228,7 +228,7 @@ const english = [
     correct: "B",
   },
   {
-    question: "Below are expressions of offering help, except.",
+    question: "Below are expressions of offering help, except...",
     choiceA: "Can I give you a hand",
     choiceB: "May I offer my assistance?",
     choiceC: "Do you need any help?",
@@ -298,7 +298,7 @@ const english = [
     choiceD: "might have woken",
   },
   {
-    question: "The Liberal Democrats and the Green party ____________ a coalition before the committee count the ballot paper.",
+    question: "The Liberal Democrats and the Green party .... a coalition before the committee count the ballot paper.",
     choiceA: "Have formed",
     choiceB: "Had formed",
     choiceC: "Have been formed",
@@ -380,7 +380,7 @@ const algorithm = [
     correct: "D",
   },
   {
-    question: "Ekstension file yang dibuat menggunakan bahasa Python adalah",
+    question: "Ekstension file yang dibuat menggunakan bahasa Python adalah...",
     choiceA: ".js",
     choiceB: ".cpp",
     choiceC: ".py",
@@ -388,20 +388,12 @@ const algorithm = [
     correct: "C",
   },
   {
-    question: "Struktur percabangan pada bahasa Python menggunakan fungsi",
+    question: "Struktur percabangan pada bahasa Python menggunakan fungsi...",
     choiceA: "Loop",
     choiceB: "LookUp",
     choiceC: "If Else",
     choiceD: "Aritmatika",
     correct: "C",
-  },
-  {
-    question: "Struktur percabangan pada bahasa Python menggunakan fungsi",
-    choiceA: "For While",
-    choiceB: "LookUp",
-    choiceC: "If Else",
-    choiceD: "Aritmatika",
-    correct: "A",
   },
   {
     question: "Struktur percabangan yang memiliki 2 (dua) kondisi dapat menggunakan perintah....",
@@ -436,6 +428,14 @@ const algorithm = [
     correct: "A",
   },
   {
+    question: "Struktur percabangan pada bahasa Python menggunakan fungsi...",
+    choiceA: "For While",
+    choiceB: "LookUp",
+    choiceC: "If Else",
+    choiceD: "Aritmatika",
+    correct: "A",
+  },
+  {
     question: "Pembagian dengan nol adalah contoh jenis kesalahan apa?",
     choiceA: "Syntak Error",
     choiceB: "Run-Time Error",
@@ -452,7 +452,7 @@ const algorithm = [
     correct: "A",
   },
   {
-    question: "Salah satu function/method berikut yang tidak digunakan pada Python String",
+    question: "Salah satu function/method berikut yang tidak digunakan pada Python String...",
     choiceA: "print",
     choiceB: "replace",
     choiceC: "append",
@@ -476,7 +476,7 @@ const algorithm = [
     correct: "B",
   },
   {
-    question: "Operator pada python yang digunakan untuk operasi penambahan, pengurangan, perkalian, pembagian dan lain-lain disebut",
+    question: "Operator pada python yang digunakan untuk operasi penambahan, pengurangan, perkalian, pembagian dan lain-lain disebut...",
     choiceA: "Aritmatika",
     choiceB: "Pembanding",
     choiceC: "String",
@@ -484,7 +484,7 @@ const algorithm = [
     correct: "A",
   },
   {
-    question: "Operator ini digunakan untuk membandingkan dua buah nilai. Operator ini juga dikenal dengan operator relasi dan sering digunakan untuk membuat sebuah logika atau kondisi, disebut",
+    question: "Operator ini digunakan untuk membandingkan dua buah nilai. Operator ini juga dikenal dengan operator relasi dan sering digunakan untuk membuat sebuah logika atau kondisi, disebut...",
     choiceA: "Aritmatika",
     choiceB: "Pembanding",
     choiceC: "String",
@@ -492,7 +492,7 @@ const algorithm = [
     correct: "B",
   },
   {
-    question: "Operator ini menggunakan simbol =, +=, -=, *= dan lain-lain disebut",
+    question: "Operator ini menggunakan simbol =, +=, -=, *= dan lain-lain disebut...",
     choiceA: "Aritmatika",
     choiceB: "Pembanding",
     choiceC: "Logika",
@@ -535,8 +535,6 @@ let count = 0;
 let TIMER;
 let score = 0;
 
-// start.addEventListener("click", startQuiz);
-
 // start quiz
 function startQuiz() {
   const infoBtn = document.getElementById("info-btn")
@@ -578,7 +576,6 @@ function renderProgress() {
 }
 
 // counter render
-
 function renderCounter() {
   if (count <= questionTime) {
     counter.innerHTML = count;
@@ -600,7 +597,6 @@ function renderCounter() {
 }
 
 // checkAnwer
-
 function checkAnswer(answer) {
   if (answer == subjects[runningQuestion].correct) {
     // answer is correct
@@ -657,16 +653,46 @@ function scoreRender() {
   const scorePerCent = Math.round((100 * score) / subjects.length);
 
   // choose the image based on the scorePerCent
-  let img =
-    scorePerCent >= 80
-      ? "Assets/img/5.png"
-      : scorePerCent >= 60
-        ? "Assets/img/4.png"
-        : scorePerCent >= 40
-          ? "Assets/img/3.png"
-          : scorePerCent >= 20
-            ? "Assets/img/2.png"
-            : "Assets/img/1.png";
+  let img = ""
+  if (scorePerCent >= 80) {
+    img = "Assets/img/5.png"
+    setTimeout(() => {
+      var music = new Audio();
+      music.src = "Assets/music/Huh.mp3";
+      music.play();
+    }, 2000);
+  } else if (scorePerCent >= 60) {
+    img = "Assets/img/4.png"
+    setTimeout(() => {
+      var music = new Audio();
+      music.src = "Assets/music/Huh.mp3";
+      music.play();
+    }, 2000);
+
+  } else if (scorePerCent >= 40) {
+    img = "Assets/img/3.png"
+    setTimeout(() => {
+      var music = new Audio();
+      music.src = "Assets/music/Huh.mp3";
+      music.play();
+    }, 2000);
+
+  } else if (scorePerCent >= 20) {
+    img = "Assets/img/2.png"
+    setTimeout(() => {
+      var music = new Audio();
+      music.src = "Assets/music/Huh.mp3";
+      music.play();
+    }, 2000);
+
+  } else {
+    img = "Assets/img/1.png";
+    setTimeout(() => {
+      var music = new Audio();
+      music.src = "Assets/music/Huh.mp3";
+      music.play();
+    }, 2000);
+  }
 
   scoreDiv.innerHTML = "<img src=" + img + ">";
   scoreDiv.innerHTML += `<p>${scorePerCent}%</p>`;
@@ -676,13 +702,6 @@ function scoreRender() {
 function reloadQuiz() {
   window.location.reload()
 }
-
-// //////////////////////////////////////////////////////
-// var myVar;
-
-// function myLoader() {
-//   myVar = setTimeout(showPage, 5000);
-// }
 
 function showHideInfo() {
   const loader = document.getElementById("loader")

@@ -134,11 +134,11 @@ body {
 }
 
 #question {
-	width: 1000px;
+	width: 980px;
 	height: 200px;
 	position: absolute;
 	padding-left: 28px;
-	top: 48px;
+	top: 24px;
 }
 #question p {
 	margin: 0;
